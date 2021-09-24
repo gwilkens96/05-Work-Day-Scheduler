@@ -5,7 +5,7 @@ todaysDate.textContent = moment().format("dddd, MMMM Do");
 
 var checkTime = function () {
 
-     var currentTime = parseInt(moment(0).format('H'));
+     var currentTime = parseInt(moment().format('H'));
 
     var timeBlockElements = $("textarea");
     
@@ -34,5 +34,6 @@ $('.saveBtn').on('click', storeValues);
 function storeValues() {
     var input = $(this).siblings('textarea').val().trim();
     var valueId = $(this).parent().attr('id');
-    localStorage.setItem(valueId, input);
-}
+    localStorage.setItem(valueId, input); 
+    }
+
