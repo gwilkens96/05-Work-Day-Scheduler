@@ -33,7 +33,16 @@ $('.saveBtn').on('click', storeValues);
 
 function storeValues() {
     var input = $(this).siblings('textarea').val().trim();
-    var valueId = $(this).parent().attr('id');
+    var valueId = $(this).siblings('textarea').attr('id');
     localStorage.setItem(valueId, input); 
     }
 
+function getValues() {
+    var textElements = $('textarea');
+    for (var i = 0 ; i < textElements.length ; i++) {
+        var idElement = textElements[i].id;
+        textElements[i].value = localStorage.getItem(idElement); 
+    }
+}
+
+getValues();
